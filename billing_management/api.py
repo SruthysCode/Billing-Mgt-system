@@ -26,6 +26,17 @@ def check_warehouse_stock(warehouse, product) :
     try :
         checkStock = frappe.get_doc("Warehouse",{'warehouse_name' : warehouse, 'product_name': product})
         print("CHECK STOCK >>> ", checkStock.stock)
+
+        exists= frappe.db.exists(
+            "Warehouse",
+            {  "warehouse_name": warehouse,
+                'product_name': product,
+            },
+        )
+        if not exists:
+            frappe.throw("There is an active membership for warehouse")
+    
+        
         if checkStock.stock is None:
         # Product not in the warehouse
             return {
@@ -52,6 +63,7 @@ def check_warehouse_stock(warehouse, product) :
             
     except Exception as e :
         print("Exception from check warehouse stck", e)
+        frappe.msgprint("Product not in the warehouse", "Warning")
         return {"status": "error", "message": str(e)}   
 
 @frappe.whitelist()
@@ -60,6 +72,7 @@ def update_warehouse_stock(warehouse, product, quantity):
         updateStock = frappe.get_doc("Warehouse",{'warehouse_name' : warehouse, 'product_name': product})
 
         updateStock.stock -=int(quantity)
+        print("UPdated stock ~~~~~~", updateStock.stock)
         updateStock.save()
         frappe.db.commit()
         return {"status": "success", "message": (frappe._("Stock updated successfully."))}

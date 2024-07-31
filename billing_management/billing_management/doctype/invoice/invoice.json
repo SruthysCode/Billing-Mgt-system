@@ -1,24 +1,63 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "INV.###",
  "creation": "2024-07-31 11:44:38.100581",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_z5we"
+  "invoice_no",
+  "customer_name",
+  "date",
+  "allow_multiple_products",
+  "products",
+  "total_amount"
  ],
  "fields": [
   {
-   "fieldname": "section_break_z5we",
-   "fieldtype": "Section Break"
+   "fieldname": "invoice_no",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Invoice No"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Link",
+   "label": "Customer Name",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "products",
+   "fieldtype": "Table",
+   "label": "Products",
+   "options": "ProductTable"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Int",
+   "label": "Total Amount"
+  },
+  {
+   "default": "0",
+   "fieldname": "allow_multiple_products",
+   "fieldtype": "Check",
+   "label": "Allow Multiple Products"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-31 11:44:38.100581",
+ "modified": "2024-07-31 14:39:01.261285",
  "modified_by": "Administrator",
  "module": "Billing Management",
  "name": "Invoice",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
