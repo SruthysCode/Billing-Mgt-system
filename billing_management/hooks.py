@@ -4,6 +4,7 @@ app_publisher = "Sruthy"
 app_description = "Billing System"
 app_email = "sruthy@gmail.com"
 app_license = "mit"
+
 # required_apps = []
 
 # Includes in <head>

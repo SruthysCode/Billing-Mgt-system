@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "WH.#####",
+ "creation": "2024-07-30 16:24:11.749793",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "warehouse_name",
+  "product_name",
+  "stock"
+ ],
+ "fields": [
+  {
+   "fieldname": "product_name",
+   "fieldtype": "Link",
+   "label": "Product Name",
+   "options": "Product"
+  },
+  {
+   "fieldname": "stock",
+   "fieldtype": "Int",
+   "label": "Stock"
+  },
+  {
+   "fieldname": "warehouse_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Warehouse Name",
+   "options": "Ware",
+   "reqd": 1,
+   "unique": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-07-31 10:23:08.516226",
+ "modified_by": "Administrator",
+ "module": "Billing Management",
+ "name": "Warehouse",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

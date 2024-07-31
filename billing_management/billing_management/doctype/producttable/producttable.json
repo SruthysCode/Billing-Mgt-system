@@ -1,0 +1,104 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "PT.###",
+ "creation": "2024-07-26 14:38:37.634378",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "product",
+  "column_break_oxcd",
+  "warehouse",
+  "section_break_jngm",
+  "quantity",
+  "column_break_jcbn",
+  "stock",
+  "section_break_fucg",
+  "price",
+  "column_break_9ppn",
+  "amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "product",
+   "fieldtype": "Link",
+   "label": "Product",
+   "options": "Product"
+  },
+  {
+   "fetch_from": "product.price",
+   "fieldname": "price",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Price"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Quantity"
+  },
+  {
+   "fieldname": "stock",
+   "fieldtype": "Int",
+   "label": "Stock"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount"
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Ware"
+  },
+  {
+   "fieldname": "column_break_oxcd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_jngm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_jcbn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_fucg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_9ppn",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-07-31 11:24:28.629706",
+ "modified_by": "Administrator",
+ "module": "Billing Management",
+ "name": "ProductTable",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
